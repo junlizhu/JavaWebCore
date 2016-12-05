@@ -8,10 +8,11 @@
 <title>新安人才网</title>
 </head>
 <body>
-<%
-request.setCharacterEncoding("UTF-8");
-String content= request.getParameter("info");
-%>
-<h3><%=content %></h3>
-</body>
+	<%
+		request.setAttribute("name", "xiezong");
+	request.setAttribute("birthday", new Date());
+	%>
+	<jsp:forward page="page3.jsp" />
+<!-- 	<a href="page3.jsp">跳转</a>
+ --></body>
 </html>
