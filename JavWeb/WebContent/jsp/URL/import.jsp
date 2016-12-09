@@ -4,26 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>welcome.jsp</title>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<title>import.jsp</title>
 </head>
 <body>
-	<%
-		if (session.getAttribute("userid") != null) {
-	%>
-	<h3>欢迎<%=session.getAttribute("userid")%>登录本系统!!!<a
-			href="loginOut.jsp">注销</a>!
-	</h3>
-	<%
-		} else {
-	%>
-	<h3>
-		请先进行系统的<a href="login.jsp">登录</a>!
-	</h3>
-	<%
-		}
-	%>
-
-
-
+	<c:import url="param.jsp" charEncoding="UTF-8">
+		<c:param name="name" value="xieshaofeng" />
+		<c:param name="age" value="32" />
+	</c:import>
 </body>
 </html>

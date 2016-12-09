@@ -4,17 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>loginOut.jsp</title>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<title>formatDate</title>
 </head>
 <body>
-	<%
-		response.setHeader("refresh", "5;URL=login.jsp");
-		session.invalidate();
-	%>
-	<h3>你已成功退出本系统，五秒后跳转回首页!</h3>
-	<h3>
-		如果没有跳转，请点击<a href="login.jsp">这里</a>
-	</h3>
-
+	<jsp:useBean id="date" class="java.util.Date" />
+	<fmt:formatDate value="${date }" />
+	<fmt:formatDate value="${date }" pattern="yyyy/MM/dd HH:mm:ss:sss" />
 </body>
 </html>
