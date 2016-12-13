@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>WebCore</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>initServletDemo2</servlet-name>
+    <servlet-class>com.zlj.web.servlet.initServletDemo2</servlet-class>
+    <init-param>
+      <param-name>institute</param-name>
+      <param-value>新安人才网</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>initServletDemo2</servlet-name>
+    <url-pattern>/servlet/initServletDemo2</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>initServletDemo1</servlet-name>
+    <servlet-class>com.zlj.web.servlet.initServletDemo1</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>initServletDemo1</servlet-name>
+    <url-pattern>/servlet/initServletDemo1</url-pattern>
+  </servlet-mapping>
+</web-app>

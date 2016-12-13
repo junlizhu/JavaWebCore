@@ -12,7 +12,7 @@
 
 	<center>
 	<h1><b>欢迎登录</b></h1>
-		<form action="login.jsp" method="post">
+		<form action="index.jsp" method="post">
 			<span>用户名:</span><input type="text" name="uname"><br /> 
 			<span>密&nbsp;码:</span><input type="password" name="upass" ><br /> 
 			<input type="submit"value="提交" border-radius: 25px;> <input type="reset" value="重置">
