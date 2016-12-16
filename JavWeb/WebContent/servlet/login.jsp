@@ -10,7 +10,7 @@
 	<h2>请输入用户信息</h2>
 	<br />
 	<form method="post"
-		action="<%=request.getContextPath()%>/servlet/MyLoginServlet2">
+		action="/JavWeb/servlet/MyLoginServlet2">
 		<!-- action="/JavWeb/servlet/MyLoginServlet2"> -->
 		<label>用户名:</label><input type="text" name="username"><br />
 		<label>密码:</label><input type="password" name="password"><br />

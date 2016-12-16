@@ -10,38 +10,31 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class initServletDemo3
+ * Servlet implementation class InitaervletDemo
  */
 @WebServlet(
-		urlPatterns = { "/servlet/initServletDemo3" }, 
+		urlPatterns = { "/servlet/InitaervletDemo" }, 
 		initParams = { 
-				@WebInitParam(name = "xarcw", value = "新安人才网"), 
-				@WebInitParam(name = "aaa", value = "啊啊啊啊")
+				@WebInitParam(name = "dddd", value = "不好搞"), 
+				@WebInitParam(name = "ggggg", value = "灌灌灌灌灌")
 		})
-public class initServletDemo3 extends HttpServlet {
+public class InitaervletDemo extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public initServletDemo3() {
+    public InitaervletDemo() {
         super();
         // TODO Auto-generated constructor stub
     }
 
 	/**
-	 * @see ServletDemo1#init(ServletConfig)
+	 * @see Servlet#init(ServletConfig)
 	 */
 	public void init(ServletConfig config) throws ServletException {
-		System.out.println(config.getInitParameter("xarcw"));
-		System.out.println(config.getInitParameter("aaa"));
-	}
-
-	/**
-	 * @see ServletDemo1#destroy()
-	 */
-	public void destroy() {
-		// TODO Auto-generated method stub
+		System.out.println("dddd :" + config.getInitParameter("dddd"));
+		System.out.println("ggggg :" + config.getInitParameter("ggggg"));
 	}
 
 	/**

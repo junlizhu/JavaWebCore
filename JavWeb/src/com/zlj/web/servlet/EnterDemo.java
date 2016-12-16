@@ -1,47 +1,51 @@
 package com.zlj.web.servlet;
 
 import java.io.IOException;
-import javax.servlet.ServletConfig;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sun.xml.internal.bind.CycleRecoverable.Context;
+
 /**
- * Servlet implementation class initServletDemo1
+ * Servlet implementation class EnterDemo
  */
-//@WebServlet("/initServletDemo1")
-public class initServletDemo1 extends HttpServlet {
+@WebServlet("/servlet/EnterDemo")
+public class EnterDemo extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public initServletDemo1() {
+    public EnterDemo() {
         super();
         // TODO Auto-generated constructor stub
     }
 
 	/**
-	 * @see ServletDemo1#init(ServletConfig)
-	 */
-	public void init(ServletConfig config) throws ServletException {
-		System.out.println("initServletDemo1 servlet 初始化.....");
-	}
-
-	/**
-	 * @see ServletDemo1#destroy()
-	 */
-	public void destroy() {
-		System.out.println("initServletDemo1 servlet 销毁.....");
-	}
-
-	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("initServletDemo1 servlet DoGet.....");
+		String name = request.getParameter("username");
+		String pwd = request.getParameter("passward");
+		if ("zhangsan".equals(name)&&"123456".equals(pwd)) {
+			ServletContext context = getServletContext();
+			//得到RequestDispatcher对象，调用forward（）
+			RequestDispatcher rd = context.getRequestDispatcher("/servlet/welcome.html");
+			rd.forward(request, response);
+		} else {//得到RequestDispatcher对象，调用include（)
+			RequestDispatcher rd=request.getRequestDispatcher("/servlet/LoginDemo");
+			rd.include(request, response);
+			}
+		
+		
+		
+		
 		
 	}
 
@@ -50,8 +54,6 @@ public class initServletDemo1 extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("initServletDemo1 servlet DoPost.....");
-		System.out.println("initServletDemo1 servlet 即将调用DoGet.....");
 		doGet(request, response);
 	}
 
