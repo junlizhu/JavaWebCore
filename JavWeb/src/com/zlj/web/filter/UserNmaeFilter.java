@@ -23,7 +23,7 @@ import org.apache.jasper.tagplugins.jstl.core.Out;
 		DispatcherType.INCLUDE, 
 		DispatcherType.ERROR
 }
-			, urlPatterns={"/JavWeb/servlet/MyLoginServlet2"})
+			, urlPatterns = { "/servlet/MyLoginServlet"})
 public class UserNmaeFilter implements Filter {
 
     /**
@@ -48,13 +48,13 @@ public class UserNmaeFilter implements Filter {
 		// place your code here
 		System.out.println("过滤器UserNmaeFilter执行中........");
 		String uname = request.getParameter("username");
-		if (uname !=null && "".equals(uname)) {
+		if (uname !=null && !"".equals(uname)) {
 		System.out.println("UserNmaeFilter放行，即将进入下一个过滤器....");
 			chain.doFilter(request, response);
 			//System.out.println("过滤器UserNmaeFilter执行结束！");
 		} else {
 			HttpServletResponse hr = (HttpServletResponse)response;
-			hr.sendRedirect("/filter/loginUserNameLost.html");
+			hr.sendRedirect("/Login/loginUserNameLost.html");
 		}
 		// pass the request along the filter chain
 		System.out.println("过滤器UserNmaeFilter执行结束！");

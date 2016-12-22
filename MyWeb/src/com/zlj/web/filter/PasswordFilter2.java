@@ -20,13 +20,13 @@ import javax.servlet.http.HttpServletResponse;
 				DispatcherType.INCLUDE, 
 				DispatcherType.ERROR
 		}
-					, urlPatterns = { "/servlet/MyLoginServlet"})
-public class PasswordFilter implements Filter {
+					, servletNames = { "/JavWeb/servlet/MyLoginServlet2"})
+public class PasswordFilter2 implements Filter {
 
     /**
      * Default constructor. 
      */
-    public PasswordFilter() {
+    public PasswordFilter2() {
         // TODO Auto-generated constructor stub
     }
 
@@ -45,13 +45,13 @@ public class PasswordFilter implements Filter {
 		// place your code here
 		System.out.println("过滤器PasswordFilter执行中........");
 		String password = request.getParameter("password");
-		if (password !=null && !"".equals(password)) {
+		if (password !=null && "".equals(password)) {
 		System.out.println("PasswordFilter放行，即将进入下一个过滤器....");
 			chain.doFilter(request, response);
 			//System.out.println("过滤器UserNmaeFilter执行结束！");
 		} else {
 			HttpServletResponse hr = (HttpServletResponse)response;
-			hr.sendRedirect("/Login/loginPasswordLost.html");
+			hr.sendRedirect("/filter/loginPasswordLost.html");
 		}
 		// pass the request along the filter chain
 		System.out.println("过滤器PasswordFilter执行结束！");

@@ -12,15 +12,15 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet Filter implementation class PasswordFilter
+ * Servlet Filter implementation class PasswordFilter1
  */
 @WebFilter(dispatcherTypes = {
-				DispatcherType.REQUEST, 
-				DispatcherType.FORWARD, 
-				DispatcherType.INCLUDE, 
-				DispatcherType.ERROR
-		}
-					, urlPatterns = { "/servlet/MyLoginServlet"})
+		DispatcherType.REQUEST, 
+		DispatcherType.FORWARD, 
+		DispatcherType.INCLUDE, 
+		DispatcherType.ERROR
+}
+			, urlPatterns = { "/servlet/MyLoginServlet"})
 public class PasswordFilter implements Filter {
 
     /**
@@ -51,7 +51,7 @@ public class PasswordFilter implements Filter {
 			//System.out.println("过滤器UserNmaeFilter执行结束！");
 		} else {
 			HttpServletResponse hr = (HttpServletResponse)response;
-			hr.sendRedirect("/Login/loginPasswordLost.html");
+			hr.sendRedirect("/MyWeb/Login/loginPasswordLost.html");
 		}
 		// pass the request along the filter chain
 		System.out.println("过滤器PasswordFilter执行结束！");
